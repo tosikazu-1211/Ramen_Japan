@@ -44,7 +44,7 @@ Ramen_Japan
 ## 設計書
 
 ### 機能一覧
-<https://docs.google.com/spreadsheets/d/1giuzISEzG4-HEJ2lLAzUG8P5XkexFyCZBaxDegcdIHk/edit#gid=0>
+<https://docs.google.com/spreadsheets/d/1giuzISEzG4-HEJ2lLAzUG8P5XkexFyCZBaxDegcdIHk/edit?usp=sharing>
 
 ## 開発環境
 - OS：Linux(CentOS)

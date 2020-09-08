@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Ramen_Japan
 
-Things you may want to cover:
+## サイト概要
+ラーメン用レビューサイト
 
-* Ruby version
+### サイトテーマ
+色々な人が行ったラーメン屋さんの情報を見れるサイト
 
-* System dependencies
+### テーマを選んだ理由
+ラーメンが好きなので自分が行ったことないラーメン屋さんの情報を確認したいから
 
-* Configuration
+### ターゲットユーザ
+ラーメン好き全般
 
-* Database creation
+### 主な利用シーン
+・ラーメンを食べたくなったらこのサイトを見て、食べてみたいラーメンを探す
+・ラーメンを食べたらレビューを投稿し、他のユーザーに情報を共有する
 
-* Database initialization
+## 設計書
 
-* How to run the test suite
+### 機能一覧
+<https://docs.google.com/spreadsheets/d/1giuzISEzG4-HEJ2lLAzUG8P5XkexFyCZBaxDegcdIHk/edit?usp=sharing>
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：Vagrant,VirtualBox

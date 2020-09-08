@@ -1,7 +1,7 @@
 # README
 
-# <アプリ名>
-Ramen_Japan
+# Ramen_Japan
+
 ## サイト概要
 ラーメン用レビューサイト
 

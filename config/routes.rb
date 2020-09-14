@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   #user
 
+  resources :ramens
+
   root "user/homes#top"
   get "about" => "user/homes#about"
 

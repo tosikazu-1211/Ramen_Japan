@@ -1,0 +1,9 @@
+<% provide(:title, "退会") %>
+<div class="text-center">
+  <h3><strong>本当に退会しますか？</strong></h3>
+  <br>
+  <h4>退会すると、会員登録情報や<br>レビューが閲覧できなくなります。<br>退会する場合は、「退会する」をクリックしてください。</h4>
+  <br>
+  <%= link_to "退会しない", mypage_users_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "退会する", withdraw_users_path, method: :PATCH, data: {confirm: "本当に退会してもよろしいですか？"}, class: "btn btn-lg btn-danger" %>
+</div>

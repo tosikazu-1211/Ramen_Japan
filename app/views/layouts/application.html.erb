@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RamenJapan</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <meta charset="UTF-8">
+  <title>RamenJapan</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body>
+  <%= render 'layouts/header' %>
+
+  <div class="container main">
+    <p id="notice"><%= notice %></p>
     <%= yield %>
-  </body>
+  </div>
+
+  <footer class="fixed-bottom navbar-fixed-bottom">
+    <div class="container">
+      <p class="btn btn-default admin-login pull-right"><%= link_to "管理者ログインはこちら", new_admin_session_path %></p>
+      <p class="pull-left copyright">© All rights reserved by tosi Company</p>
+    </div>
+  </footer>
+</body>
 </html>

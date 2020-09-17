@@ -1,0 +1,42 @@
+<% provide(:title, "登録情報編集") %>
+<h2>登録情報編集</h2>
+
+<%= form_for(@user, html: {class: "form-horizontal"}, url: user_user_path, method: :PUT) do |f| %>
+
+<% if @user.errors.any? %>
+<div id="error_explanation">
+  <h3><%= @user.errors.count %>件のエラーが発生しました</h3>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="form-group row">
+  <%= f.label :"名前", class: "col-xs-12 col-sm-12 col-form-label" %>
+  <div class="col-xs-7 col-sm-2">
+    <%= f.text_field :name, autofocus: true, placeholder: "（名前）", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :"メールアドレス", class: "col-xs-12 col-sm-3 col-form-label" %>
+  <div class="col-xs-10 col-sm-4">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
+  </div>
+</div>
+
+<div class="form-group row">
+  <%= f.label :"年齢", class: "col-xs-12 col-sm-3 col-form-label" %>
+  <div class="col-xs-6 col-sm-4">
+    <%= f.text_field :age, autofocus: true, placeholder: "年齢", class: "form-control" %>
+  </div>
+</div>
+
+<div class="actions text-center col-sm-offset-7">
+  <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
+  <%= link_to "退会する", quit_user_user_path, class: "btn btn-danger col-xs-offset-2" %>
+</div>
+<% end %>

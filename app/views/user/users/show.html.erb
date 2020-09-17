@@ -1,0 +1,46 @@
+<% provide(:title, "マイページ") %>
+<div id="error_explanation">
+  <%= flash[:alert] %>
+</div>
+
+<h2>マイページ</h2>
+<div class="row">
+  <div class="co-xs-12 col-sm-7">
+    <h4>
+      <strong>登録情報</strong>
+    </h4>
+
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td class="active col-xs-3 col-sm-4">氏名</td>
+            <td class="col-xs-"><%= @user.name %></td>
+          </tr>
+
+          <tr>
+            <td class="active">年齢</td>
+            <td><%= @user.age %></td>
+          </tr>
+
+          <tr>
+            <td class="active">性別</td>
+            <td><%= @user.gender %></td>
+          </tr>
+
+          <tr>
+            <td class="active">メールアドレス</td>
+            <td class=""><%= @user.email %></td>
+          </tr>
+
+          <tr>
+            <td class="active">パスワード</td>
+            <td class=""><%= link_to "パスワードを変更する", edit_user_registration_path %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <%= link_to "編集する", edit_user_user_path, class: "btn btn-primary pull-right" %>
+      </div>
+  </div>
+</div>

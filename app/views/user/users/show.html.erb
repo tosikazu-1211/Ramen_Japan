@@ -10,21 +10,25 @@
       <strong>登録情報</strong>
     </h4>
 
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <td class="active col-xs-3 col-sm-4">氏名</td>
-            <td class="col-xs-"><%= @user.name %></td>
-          </tr>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <td class="active col-xs-3 col-sm-4">氏名</td>
+          <td class="col-xs-"><%= @user.name %></td>
+        </tr>
 
-          <tr>
-            <td class="active">年齢</td>
-            <td><%= @user.age %></td>
-          </tr>
+        <tr>
+          <td class="active">年齢</td>
+          <td><%= @user.age %></td>
+        </tr>
 
-          <tr>
-            <td class="active">性別</td>
-            <td><%= @user.gender %></td>
+        <tr>
+          <td class="active">性別</td>
+          <td><% if @user.gender == "male" %>
+            男性
+            <% else %>
+            女性
+            <% end %></td>
           </tr>
 
           <tr>
@@ -42,5 +46,5 @@
       <div>
         <%= link_to "編集する", edit_user_user_path, class: "btn btn-primary pull-right" %>
       </div>
+    </div>
   </div>
-</div>

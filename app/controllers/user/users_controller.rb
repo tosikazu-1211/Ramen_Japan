@@ -7,19 +7,6 @@ class User::UsersController < ApplicationController
 		@user = current_user
 	end
 
-	#退会ページ
-	def quit
-	end
-
-  #退会アクション
-  def withdraw
-  	@user = current_user
-  	@user.update(is_deleted: true)
-    reset_session #ログアウトさせる
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
-    redirect_to root_path
-  end
-
   #登録情報編集ページ
   def edit
   	@user = current_user
@@ -34,6 +21,14 @@ class User::UsersController < ApplicationController
   	else
   		render "edit"
   	end
+  end
+
+  #退会アクション
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = "ユーザーを削除しました。"
+    redirect_to :root
   end
 
   private

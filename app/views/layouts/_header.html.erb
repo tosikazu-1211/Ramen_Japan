@@ -21,7 +21,7 @@
           <% else %>
           <a href="/">
             <% end %>
-            <p class="shopname1">日本のラーメンのレビューサイト</p>
+            <p class="shopname1">日本のラーメンのレビュー投稿サイト</p>
             <p class="shopname2">Ramen Japan</p>
           </a>
         </div>
@@ -40,6 +40,7 @@
             </ul>
           </li>
           <li class="btn"><%= link_to "マイページ", user_user_path(:id) %></li>
+          <li class="btn"><%= link_to "レビュー投稿", new_user_ramen_noodle_path %></li>
           <li class="btn"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
           <% else %>
           <li class="btn"><%= link_to "About", about_path %></li>

@@ -15,7 +15,7 @@
 <% end %>
 
 <div class="form-group row">
-  <%= f.label :"名前", class: "col-xs-12 col-sm-12 col-form-label" %>
+  <%= f.label :"名前", class: "col-xs-12 col-sm-3 col-form-label" %>
   <div class="col-xs-7 col-sm-2">
     <%= f.text_field :name, autofocus: true, placeholder: "（名前）", class: "form-control" %>
   </div>
@@ -37,6 +37,9 @@
 
 <div class="actions text-center col-sm-offset-7">
   <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
-  <%= link_to "退会する", quit_user_user_path, class: "btn btn-danger col-xs-offset-2" %>
 </div>
 <% end %>
+
+<div class="actions text-center col-sm-offset-7">
+  <%= link_to "退会する",user_user_path(current_user.id), class: "btn btn-danger destroy-user",method: :delete %>
+</div>

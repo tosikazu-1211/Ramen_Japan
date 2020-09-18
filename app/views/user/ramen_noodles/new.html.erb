@@ -1,0 +1,67 @@
+<div class="container">
+	<div class="row">
+
+		<h2>レビュー投稿はこちら</h2>
+		<%= form_for @ramen_noodle, url: user_ramen_noodles_path, class: "form-inline" do |f| %>
+		<% if @ramen_noodle.errors.any? %>
+		<h3><%= @ramen_noodle.errors.count %>errors prohibited this obj from being saved:</h3>
+		<% @ramen_noodle.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+		<% end %>
+
+		<div class="form-group col-xs-12 col-sm-5 col-md-4">
+			<div class="item-image">
+				<%= attachment_image_tag @ramen_noodle, :image, class: "img-square", fallback: "no_image.png", size:"200x200" %>
+			</div>
+			<%= f.attachment_field :image, placeholder: "画像" %>
+		</div>
+
+		<div class="field row">
+			<%= f.label :"店名" %>
+			<%= f.text_field :title, class: "col-xs-12 ramen_noodle_title" %>
+		</div>
+
+		<div class="field row">
+			<%= f.label :"住所" %>
+			<%= f.text_field :address, class: "col-xs-12 ramen_noodle_address" %>
+		</div>
+
+		<div class="field row">
+			<%= f.label :"商品名" %>
+			<%= f.text_field :name, class: "col-xs-12 ramen_noodle_name" %>
+		</div>
+
+		<div class="field row">
+			<%= f.label :"値段" %>
+			<%= f.text_field :price, class: "col-xs-12 ramen_noodle_price" %>
+		</div>
+
+		<div class="field row">
+			<%= f.label :"レビュー" %>
+			<%= f.text_field :body, class: "col-xs-12 ramen_noodle_body" %>
+		</div>
+
+		<div class="row">
+			<%= f.submit "投稿する", class: "btn btn-success col-xs-4" %>
+		</div>
+		<% end %>
+
+	</div>
+</div>
+
+<!-- 画像プレビュー機能 -->
+<script>
+  $(function(){
+  // inputのidから情報の取得
+  $('#image_id').on('change', function (e) {
+// ここから既存の画像のurlの取得
+var reader = new FileReader();
+reader.onload = function (e) {
+  $(".image").attr('src', e.target.result);
+}
+// ここまで
+  reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入
+});
+});
+</script>

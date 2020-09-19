@@ -1,1 +1,45 @@
-<h1>詳細ページ</h1>
+<div class="container">
+	<div class="row">
+		<h2>レビュー詳細</h2>
+
+		<div class="col-xs-3">
+			<%= attachment_image_tag(@ramen_noodle1, :image, :fill, 250, 250, fallback: "no-image.png") %>
+		</div>
+
+		<div class="col-xs-9">
+			<table class="table table-bordered">
+				<tbody>
+					<tr>
+						<td class="active col-xs-3 col-sm-4">商品名</td>
+						<td><%= @ramen_noodle1.name %></td>
+					</tr>
+
+					<tr>
+						<td class="active">値段</td>
+						<td><%= @ramen_noodle1.price %></td>
+					</tr>
+
+					<tr>
+						<td class="active">店名</td>
+						<td><%= @ramen_noodle1.title %></td>
+					</tr>
+
+					<tr>
+						<td class="active">住所</td>
+						<td><%= @ramen_noodle1.address %></td>
+					</tr>
+
+					<tr>
+						<td class="active">レビュー</td>
+						<td><%= @ramen_noodle1.body %></td>
+					</tr>
+				</tbody>
+			</table>
+			<div>
+				<%= link_to "編集", edit_user_ramen_noodle_path(@ramen_noodle1), class: "btn-sm btn-success edit_ramen_noodle_#{@ramen_noodle1.id}" %>
+				<%= link_to "削除", user_ramen_noodle_path(@ramen_noodle1), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_ramen_noodle_#{@ramen_noodle1.id}" %>
+			</div>
+		</div>
+
+	</div>
+</div>

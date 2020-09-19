@@ -39,7 +39,7 @@
 
 		<div class="field row">
 			<%= f.label :"レビュー" %>
-			<%= f.text_field :body, class: "col-xs-12 ramen_noodle_body" %>
+			<%= f.text_area :body, class: "col-xs-12 ramen_noodle_body" %>
 		</div>
 
 		<div class="row">
@@ -52,13 +52,13 @@
 
 <!-- 画像プレビュー機能 -->
 <script>
-  $(function(){
+	$(function(){
   // inputのidから情報の取得
-  $('#image_id').on('change', function (e) {
+  $('#ramen_noodle_image').on('change', function (e) {
 // ここから既存の画像のurlの取得
 var reader = new FileReader();
 reader.onload = function (e) {
-  $(".image").attr('src', e.target.result);
+	$(".image").attr('src', e.target.result);
 }
 // ここまで
   reader.readAsDataURL(e.target.files[0]); //取得したurlにアップロード画像のurlを挿入

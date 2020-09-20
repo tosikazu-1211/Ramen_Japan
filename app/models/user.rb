@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :ramen_noodles
+  has_many :favorites, dependent: :destroy
+
+  validates :name, :gender, :age, presence: true
 
 end

@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 
   #user
   namespace :user do
-    resources :ramen_noodles
     resources :users
+    resources :ramen_noodles do
+      resource :favorites, only: [:create, :destroy]
+    end
   end
 
   root "user/homes#top"

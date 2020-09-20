@@ -3,7 +3,7 @@
 		<h2>レビュー詳細</h2>
 
 		<div class="col-xs-3">
-			<%= attachment_image_tag(@ramen_noodle1, :image, :fill, 250, 250, fallback: "no-image.png") %>
+			<%= attachment_image_tag(@ramen_noodle1, :image, :fill, 250, 250) %>
 		</div>
 
 		<div class="col-xs-9">
@@ -16,7 +16,7 @@
 
 					<tr>
 						<td class="active">値段</td>
-						<td><%= @ramen_noodle1.price %></td>
+						<td><%= @ramen_noodle1.price %>円</td>
 					</tr>
 
 					<tr>
@@ -35,9 +35,9 @@
 					</tr>
 				</tbody>
 			</table>
+
 			<div>
 				<%= link_to "編集", edit_user_ramen_noodle_path(@ramen_noodle1), class: "btn-sm btn-success edit_ramen_noodle_#{@ramen_noodle1.id}" %>
-				<%= link_to "削除", user_ramen_noodle_path(@ramen_noodle1), method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn-sm btn-danger destroy_ramen_noodle_#{@ramen_noodle1.id}" %>
 			</div>
 		</div>
 

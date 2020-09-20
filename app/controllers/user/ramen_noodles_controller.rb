@@ -14,7 +14,7 @@ def create
 		redirect_to user_ramen_noodle_path(@ramen_noodle.id), notice: "You have created ramen_noodle successfully."
 	else
 		@ramen_noodles = RamenNoodle.all
-		render 'index'
+		render 'new'
 	end
 end
 
@@ -44,7 +44,7 @@ end
 def update
 	@ramen_noodle = RamenNoodle.find(params[:id])
 	if @ramen_noodle.update(ramen_noodle_params)
-		redirect_to ramen_noodle_path(@ramen_noodle), notice: "You have updated ramen_noodle successfully."
+		redirect_to user_ramen_noodle_path(@ramen_noodle), notice: "You have updated ramen_noodle successfully."
 	else
 		render "edit"
 	end
@@ -54,7 +54,7 @@ end
 def destroy
 	@ramen_noodle = RamenNoodle.find(params[:id])
 	@ramen_noodle.destroy
-	redirect_to ramen_noodles_path
+	redirect_to user_ramen_noodles_path
 end
 
 private

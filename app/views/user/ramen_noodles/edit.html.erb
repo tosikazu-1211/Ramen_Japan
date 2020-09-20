@@ -1,1 +1,53 @@
-<h1>編集ページ</h1>
+<div class="container">
+	<div class="row">
+
+		<h2>レビュー編集</h2>
+		<%= form_for(@ramen_noodle, url:user_ramen_noodle_path) do |f| %>
+		<div class="ramen_noodle_image">
+			<%= attachment_image_tag @ramen_noodle, :image, :fill, 250, 250, fallback: "no_image.png", size:"250x250" %>
+		</div>
+		<%= f.attachment_field :image %>
+
+		<div class="form-group row">
+			<%= f.label :"商品名", class: "col-xs-12 col-sm-3 col-form-label" %>
+			<div class="col-xs-7 col-sm-2">
+				<%= f.text_field :name, autofocus: true, placeholder: "（商品名）", class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<%= f.label :"値段", class: "col-xs-12 col-sm-3 col-form-label" %>
+			<div class="col-xs-7 col-sm-2">
+				<%= f.text_field :price, autofocus: true, placeholder: "（値段）", class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<%= f.label :"店名", class: "col-xs-12 col-sm-3 col-form-label" %>
+			<div class="col-xs-7 col-sm-2">
+				<%= f.text_field :title, autofocus: true, placeholder: "（店名）", class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<%= f.label :"住所", class: "col-xs-12 col-sm-3 col-form-label" %>
+			<div class="col-xs-7 col-sm-2">
+				<%= f.text_field :address, autofocus: true, placeholder: "（住所）", class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<%= f.label :"レビュー", class: "col-xs-12 col-sm-3 col-form-label" %>
+			<div class="col-xs-7 col-sm-2">
+				<%= f.text_area :body, autofocus: true, placeholder: "（レビュー）", class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="actions">
+			<%= f.submit '変更する', class: "btn btn-primary" %>
+			<%= f.submit '削除する', method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger destroy_user_ramen_noodle_#{@ramen_noodle.id}" %>
+		</div>
+		<% end %>
+
+	</div>
+</div>

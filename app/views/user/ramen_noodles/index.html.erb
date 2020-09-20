@@ -1,24 +1,28 @@
-<div class="row">
-	<div class="">
+<div class="container">
+	<div class="row">
+
 		<h2>ラーメンレビュー一覧</h2>
 		<table class="table table-hover table-inverse">
 			<thead>
 				<tr>
 					<th></th>
-					<th></th>
-					<th></th>
-					<th></th>
+					<th>店名</th>
+					<th>商品名</th>
+					<th>ユーザー</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<tr>
-					<td><% @ramen_noodles.each do |ramen_noodle| %></td>
-					<td><%= link_to ramen_noodle.title %></td>
-					<td><%= ramen_noodle.name %></td>
+					<% @ramen_noodles.each do |ramen_noodle| %>
+					<td><%= attachment_image_tag ramen_noodle, :image, :fill, 250, 250, fallback: "no_image.png", size:"250x250" %></td>
+					<td><%= ramen_noodle.title %></td>
+					<td><%= link_to ramen_noodle.name, user_ramen_noodle_path(ramen_noodle) %></td>
+					<td><%= ramen_noodle.user.name %></td>
 				</tr>
 				<% end %>
 			</tbody>
 		</table>
+
 	</div>
 </div>

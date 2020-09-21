@@ -1,4 +1,5 @@
 class User::RamenNoodlesController < ApplicationController
+
 	before_action :authenticate_user!
 
 #レビュー新規投稿ページ
@@ -22,14 +23,12 @@ end
 def index
 	@ramen_noodles = RamenNoodle.all
 	@ramen_noodle = RamenNoodle.new
-	#@ramen_noodle1 = RamenNoodle.find(params[:id])
 end
 
 #レビュー詳細ページ
 def show
-	@ramen_noodle = RamenNoodle.new
-	@ramen_noodle1 = RamenNoodle.find(params[:id])
-	#@ramen_noodle_comment = RamenComment.new
+	@ramen_noodle = RamenNoodle.find(params[:id])
+	@ramen_noodle_comment = RamenNoodleComment.new
 end
 
 #レビュー更新ページ

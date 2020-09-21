@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :user do
     resources :users
     resources :ramen_noodles do
+      resources :ramen_noodle_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
     end
   end

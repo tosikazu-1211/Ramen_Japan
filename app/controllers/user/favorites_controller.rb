@@ -1,5 +1,7 @@
 class User::FavoritesController < ApplicationController
 
+	before_action :authenticate_user!
+
 	def create
 		ramen_noodle = RamenNoodle.find(params[:ramen_noodle_id])
 		favorite = current_user.favorites.new(ramen_noodle_id: ramen_noodle.id)

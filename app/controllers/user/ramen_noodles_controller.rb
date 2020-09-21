@@ -22,6 +22,7 @@ end
 def index
 	@ramen_noodles = RamenNoodle.all
 	@ramen_noodle = RamenNoodle.new
+	#@ramen_noodle1 = RamenNoodle.find(params[:id])
 end
 
 #レビュー詳細ページ

@@ -1,0 +1,2 @@
+class RamenNoodleComment < ApplicationRecord
+end

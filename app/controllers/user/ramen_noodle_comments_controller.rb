@@ -11,6 +11,8 @@ class User::RamenNoodleCommentsController < ApplicationController
 	end
 
 	def destroy
+		RamenNoodleComment.find_by(id: params[:id], ramen_noodle_id: params[:ramen_noodle_id]).destroy
+		redirect_to user_ramen_noodle_path(params[:ramen_noodle_id])
 	end
 
 	private

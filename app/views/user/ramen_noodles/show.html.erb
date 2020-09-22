@@ -54,7 +54,7 @@
 
 		<div class="comment-list bt style-2" id="comments">
 			<div class="float-wrapper">
-				<h2 class="comment-count"><%= @ramen_noodle.ramen_noodle_comments.count %>件コメント</h2>
+				<h2 class="comment-count"><%= @ramen_noodle.ramen_noodle_comments.count %>件のコメントがあります</h2>
 			</div>
 		</div>
 
@@ -67,9 +67,21 @@
 						<span class="comment-date"><%= ramen_noodle_comment.created_at.strftime('%Y/%m/%d') %></span>
 					</span>
 				</div>
-				<div class="comment-entry"><%= ramen_noodle_comment.comment %></div>
+				<div class="comment-entry">
+					<%= ramen_noodle_comment.comment %>
+				</div>
+				<% if ramen_noodle_comment.user == current_user %>
+				<div>
+					<%= link_to "コメント削除", user_ramen_noodle_ramen_noodle_comment_path(ramen_noodle_comment.ramen_noodle, ramen_noodle_comment), method: :delete, class: "btn btn-danger" %>
+				</div>
+				<% end %>
 			</div>
 		</div>
+		<% end %>
+
+		<%= form_for [@ramen_noodle, @ramen_noodle_comment], url: user_ramen_noodle_ramen_noodle_comments_path(@ramen_noodle.user) do |f| %>
+		<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに入力してください" %>
+		<%= f.submit "コメントを投稿する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
 		<% end %>
 
 		<div>

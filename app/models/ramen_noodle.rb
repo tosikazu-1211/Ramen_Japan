@@ -9,6 +9,6 @@ class RamenNoodle < ApplicationRecord
 		favorites.where(user_id: user.id).exists?
 	end
 
-	validates :title, :address, :name, :price, :body, presence: true
+	validates :title, :address, :name, :price, :body, :image, presence: true
 
 end

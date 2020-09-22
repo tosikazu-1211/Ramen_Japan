@@ -21,8 +21,7 @@ end
 
 #レビュー一覧ページ
 def index
-	@ramen_noodles = RamenNoodle.all
-	@ramen_noodle = RamenNoodle.new
+	@ramen_noodles = RamenNoodle.page(params[:page]).reverse_order
 end
 
 #レビュー詳細ページ

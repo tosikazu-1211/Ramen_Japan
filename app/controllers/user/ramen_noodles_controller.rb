@@ -35,9 +35,6 @@ end
 def edit
 	@ramen_noodle = RamenNoodle.find(params[:id])
 	@user = @ramen_noodle.user
-	if @user != current_user
-		redirect_to ramen_noodles_path
-	end
 end
 
 #レビュー更新アクション

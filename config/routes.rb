@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'inquiries/index'
+  get 'inquiries/confirm'
+  get 'inquiries/thanks'
   devise_for :admins, controllers: {
   	sessions: 		 'admins/sessions',
   	passwords: 		 'admins/passwords',

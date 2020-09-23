@@ -23,7 +23,7 @@
           <% else %>
           <a href="/">
             <% end %>
-            <p class="shopname1">日本のラーメンのレビュー投稿サイト</p>
+            <p class="shopname1">ラーメンのレビュー投稿サイト</p>
             <p class="shopname2">Ramen Japan</p>
           </a>
         </div>
@@ -35,6 +35,7 @@
           <% if user_signed_in? %>
           <li class="btn"><%= link_to "マイページ", user_user_path(:id) %></li>
           <li class="btn"><%= link_to "レビュー一覧", user_ramen_noodles_path %></li>
+          <li class="btn"><%= link_to "レビュー検索", search_user_ramen_noodles_path, method: :get %></li>
           <li class="btn"><%= link_to "レビュー投稿", new_user_ramen_noodle_path %></li>
           <li class="btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
           <% elsif admin_signed_in? %>

@@ -1,0 +1,28 @@
+<h2>レビュー検索(住所を入力してください)</h2>
+<%= form_with url: search_user_ramen_noodles_path, method: :get, local: true do |f| %>
+<%= f.text_field :address %>
+<%= f.submit :検索する %>
+<% end %>
+
+<h4>検索した住所が含まれるレビュー一覧</h4>
+<table class="table table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>店名</th>
+      <th>住所</th>
+      <th>ラーメン名</th>
+      <th>レビュー</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ramen_noodles.each do |ramen_noodle| %>
+    <tr>
+      <td><%= link_to ramen_noodle.title, user_ramen_noodle_path(ramen_noodle) %></td>
+      <td><%= ramen_noodle.address %></td>
+      <td><%= ramen_noodle.name %></td>
+      <td><%= ramen_noodle.body %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

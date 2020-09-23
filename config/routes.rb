@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'inquiries/index'           => 'inquiries#index'
+  get  'inquiries/index'    => 'inquiries#index'
   post 'inquiries/confirm'  => 'inquiries#confirm'
   post 'inquiries/thanks'   => 'inquiries#thanks'
 
@@ -21,12 +21,13 @@ Rails.application.routes.draw do
     resources :ramen_noodles do
       resources :ramen_noodle_comments, only: [:create, :destroy]
       resource :favorites, only: [:create, :destroy]
+      get :search, on: :collection
     end
   end
 
   root "user/homes#top"
-  get "ramen_noodles" => "ramen_noodles#index"
-  get "about" => "user/homes#about"
+  get  "ramen_noodles"  => "ramen_noodles#index"
+  get  "about"          => "user/homes#about"
 
   #admin
   namespace :admin do

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'inquiries/index'
-  get 'inquiries/confirm'
-  get 'inquiries/thanks'
+  get 'inquiries/index'           => 'inquiries#index'
+  post 'inquiries/confirm'  => 'inquiries#confirm'
+  post 'inquiries/thanks'   => 'inquiries#thanks'
+
   devise_for :admins, controllers: {
   	sessions: 		 'admins/sessions',
   	passwords: 		 'admins/passwords',

@@ -22,7 +22,8 @@
 					<td><%= link_to ramen_noodle.name, user_ramen_noodle_path(ramen_noodle) %></td>
 					<td><%= ramen_noodle.user.name %></td>
 
-					<td><% if ramen_noodle.favorited_by?(current_user) %>
+					<td>
+						<% if ramen_noodle.favorited_by?(current_user) %>
 						<%= link_to user_ramen_noodle_favorites_path(ramen_noodle), method: :delete do %>
 						<i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
 						<%= ramen_noodle.favorites.count %>
@@ -32,15 +33,18 @@
 						<i class="fa fa-heart" aria-hidden="true"></i>
 						<%= ramen_noodle.favorites.count %>
 						<% end %>
-						<% end %></td>
+						<% end %>
+					</td>
 
-						<td><%= link_to "#{ramen_noodle.ramen_noodle_comments.count} 件のコメント", user_ramen_noodle_path(ramen_noodle.id) %></td>
+					<td>
+						<%= link_to "#{ramen_noodle.ramen_noodle_comments.count} 件のコメント", user_ramen_noodle_path(ramen_noodle.id) %>
+					</td>
 
-					</tr>
-					<% end %>
-				</tbody>
-			</table>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
 
-		</div>
 	</div>
+</div>
 <%= paginate @ramen_noodles %>

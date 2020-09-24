@@ -37,6 +37,13 @@
 			</table>
 		</div>
 
+		<div class="pull-right">
+			<% if @ramen_noodle.user == current_user %>
+			<%= link_to "編集", edit_user_ramen_noodle_path(@ramen_noodle), class: "btn-sm btn-success edit_ramen_noodle_#{@ramen_noodle.id}" %>
+			<% end %>
+		</div>
+
+
 		<i class="fa fa-comment"></i>
 		<a href="#comments"><%= @ramen_noodle.ramen_noodle_comments.count %></a>
 
@@ -83,12 +90,6 @@
 		<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに入力してください" %>
 		<%= f.submit "コメントを投稿する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
 		<% end %>
-
-		<div>
-			<% if @ramen_noodle.user == current_user %>
-			<%= link_to "編集", edit_user_ramen_noodle_path(@ramen_noodle), class: "btn-sm btn-success edit_ramen_noodle_#{@ramen_noodle.id}" %>
-			<% end %>
-		</div>
 
 	</div>
 </div>

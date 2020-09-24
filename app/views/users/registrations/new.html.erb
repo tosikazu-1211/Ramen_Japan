@@ -31,13 +31,13 @@
     <div class="field">
       <%= f.label :"パスワード" %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %>文字以上)</em>
       <% end %><br />
       <%= f.password_field :password, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= f.label :"パスワード(確認用)" %><br />
+      <%= f.label :"パスワード" %>(確認用)<br />
       <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
@@ -47,7 +47,7 @@
     <% end %>
 
     <div>
-      <h3>既に登録済みの方はこちら</h3>
+      <h3>既にご登録済みの方はこちら</h3>
       <p><%= render "users/shared/links" %></p>
     </div>
 

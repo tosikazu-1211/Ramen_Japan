@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      ramen_noodle: ラーメン
+    attributes:
+      ramen_noodle:
+        title: 店名
+        address: 住所
+        image: 写真
+        name: 商品名
+        price: 値段
+        body: レビュー

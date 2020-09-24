@@ -4,7 +4,7 @@
 		<h2>レビュー投稿はこちら</h2>
 		<%= form_for @ramen_noodle, url: user_ramen_noodles_path, class: "form-inline" do |f| %>
 		<% if @ramen_noodle.errors.any? %>
-		<h3><%= @ramen_noodle.errors.count %>errors prohibited this obj from being saved:</h3>
+		<h3><%= @ramen_noodle.errors.count %>件のエラーがあるので投稿できませんでした</h3>
 		<% @ramen_noodle.errors.full_messages.each do |message| %>
 		<li><%= message %></li>
 		<% end %>

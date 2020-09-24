@@ -69,6 +69,11 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'kaminari','~> 1.2.1'
 gem 'rails-i18n'
+gem "gmaps4rails"
+gem "geocoder"
+gem "gon"
+gem "dotenv-rails"
+gem 'haml-rails'
 
 gem 'dotenv-rails'
 group :production do

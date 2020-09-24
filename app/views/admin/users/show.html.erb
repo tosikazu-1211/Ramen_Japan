@@ -1,0 +1,38 @@
+<h2><%= @user.name %>さんの会員詳細</h2>
+
+<div class="col-sm-7">
+  <table class="table table-borderless">
+    <tbody>
+      <tr>
+        <td class="col-xs-3">ユーザーID</td>
+        <td><%= @user.id %></td>
+      </tr>
+
+      <tr>
+        <td class="col-xs-3">氏名</td>
+        <td><%= @user.name %></td>
+      </tr>
+
+      <tr>
+        <td class="col-xs-3">性別</td>
+        <td>
+          <% if @user.gender == "male" %>
+          男性
+          <% else %>
+          女性
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="col-xs-3">年齢</td>
+        <td><%= @user.age %></td>
+      </tr>
+
+      <tr>
+        <td class="col-xs-3">メールアドレス</td>
+        <td><%= @user.email %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

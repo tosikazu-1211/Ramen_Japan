@@ -38,8 +38,11 @@
           <li class="btn"><%= link_to "レビュー検索", search_user_ramen_noodles_path, method: :get %></li>
           <li class="btn"><%= link_to "レビュー投稿", new_user_ramen_noodle_path %></li>
           <li class="btn"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+
           <% elsif admin_signed_in? %>
+          <li class="btn"><%= link_to "ユーザー一覧", admin_users_path %></li>
           <li class="btn"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+
           <% else %>
           <li class="btn"><%= link_to "About", about_path %></li>
           <li class="btn"><%= link_to "新規登録", new_user_registration_path %></li>

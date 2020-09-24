@@ -26,7 +26,7 @@
 
 					<tr>
 						<td class="active">値段</td>
-						<td><%= @ramen_noodle.price %>円</td>
+						<td><%= @ramen_noodle.price %>円(税込)</td>
 					</tr>
 
 					<tr>
@@ -39,7 +39,7 @@
 
 		<div class="pull-right">
 			<% if @ramen_noodle.user == current_user %>
-			<%= link_to "編集", edit_user_ramen_noodle_path(@ramen_noodle), class: "btn-sm btn-success edit_ramen_noodle_#{@ramen_noodle.id}" %>
+			<%= link_to "レビュー内容編集", edit_user_ramen_noodle_path(@ramen_noodle), class: "btn-sm btn-primary edit_ramen_noodle_#{@ramen_noodle.id}" %>
 			<% end %>
 		</div>
 
@@ -69,7 +69,7 @@
 		<div class="comment-body bb">
 			<div class="comment-text">
 				<div class="comment-author clearfix">
-					<a href="#" class="link-author"><%= ramen_noodle_comment.user.name %></a>
+					<%= ramen_noodle_comment.user.name %></a>
 					<span class="comment-meta">
 						<span class="comment-date"><%= ramen_noodle_comment.created_at.strftime('%Y/%m/%d') %></span>
 					</span>

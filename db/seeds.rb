@@ -11,3 +11,30 @@ Admin.create!(
 	email: 'admin@gmail.com',
 	password: 'password'
 	)
+
+User.create!(
+	name: "鈴木太郎",
+	gender: "male",
+	age: "25",
+	email: "test@test.com",
+	password: "password",
+	)
+
+User.create!(
+	name: "山田花子",
+	gender: "female",
+	age: "22",
+	email: "test1@test.com",
+	password: "password",
+	)
+
+RamenNoodle.create(
+	id: 1,
+	user_id: 1,
+	title: "麺堂　稲葉",
+	address: "茨城県古河市大山560-1",
+	name: "鶏黒つけめん",
+	price: "920",
+	body: "美味しいです！",
+	image: open("./app/assets/images/IMG_3018.png")
+	)

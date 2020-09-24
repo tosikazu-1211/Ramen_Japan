@@ -28,23 +28,68 @@
             男性
             <% else %>
             女性
-            <% end %></td>
-          </tr>
+            <% end %>
+          </td>
+        </tr>
 
-          <tr>
-            <td class="active">メールアドレス</td>
-            <td class=""><%= @user.email %></td>
-          </tr>
+        <tr>
+          <td class="active">メールアドレス</td>
+          <td class=""><%= @user.email %></td>
+        </tr>
 
-          <tr>
-            <td class="active">パスワード</td>
-            <td class=""><%= link_to "パスワードを変更する", edit_user_registration_path %></td>
-          </tr>
-        </tbody>
-      </table>
+        <tr>
+          <td class="active">パスワード</td>
+          <td class=""><%= link_to "パスワードを変更する", edit_user_registration_path %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-      <div>
-        <%= link_to "編集する", edit_user_user_path, class: "btn btn-primary pull-right" %>
-      </div>
+    <div>
+      <%= link_to "編集する", edit_user_user_path, class: "btn btn-primary pull-right" %>
     </div>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <h2><%= @user.name %>さんのレビュー一覧</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>店名</th>
+          <th>商品名</th>
+          <th>レビュー</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @ramen_noodles.each do |ramen_noodle| %>
+        <tr>
+          <td><%= ramen_noodle.title %></td>
+          <td><%= link_to ramen_noodle.name, user_ramen_noodle_path(ramen_noodle) %></td>
+          <td><%= ramen_noodle.body %></td>
+          <td>
+            <% if ramen_noodle.favorited_by?(current_user) %>
+            <%= link_to user_ramen_noodle_favorites_path(ramen_noodle), method: :delete do %>
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+            <%= ramen_noodle.favorites.count %>
+            <% end %>
+            <% else %>
+            <%= link_to user_ramen_noodle_favorites_path(ramen_noodle), method: :post do %>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+            <%= ramen_noodle.favorites.count %>
+            <% end %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to "#{ramen_noodle.ramen_noodle_comments.count} 件のコメント", user_ramen_noodle_path(ramen_noodle.id) %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

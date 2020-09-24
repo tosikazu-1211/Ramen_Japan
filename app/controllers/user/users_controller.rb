@@ -5,6 +5,7 @@ class User::UsersController < ApplicationController
 	#マイページ
 	def show
 		@user = current_user
+    @ramen_noodles = @user.ramen_noodles
 	end
 
   #登録情報編集ページ

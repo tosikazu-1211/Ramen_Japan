@@ -5,7 +5,7 @@ class User::UsersController < ApplicationController
 	#マイページ
 	def show
 		@user = current_user
-    @ramen_noodles = @user.ramen_noodles
+    @ramen_noodles = @user.ramen_noodles.page(params[:page]).reverse_order
 	end
 
   #登録情報編集ページ

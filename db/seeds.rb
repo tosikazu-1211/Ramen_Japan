@@ -38,3 +38,14 @@ RamenNoodle.create(
 	body: "美味しいです！",
 	image: open("./app/assets/images/IMG_3018.png")
 	)
+
+RamenNoodle.create(
+	id: 2,
+	user_id: 2,
+	title: "らーめん壱輝",
+	address: "茨城県古河市大堤617",
+	name: "こて味噌らーめん",
+	price: "820",
+	body: "美味しいです！",
+	image: open("./app/assets/images/IMG_3097.png")
+	)

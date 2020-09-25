@@ -10,5 +10,6 @@ class RamenNoodle < ApplicationRecord
 	end
 
 	validates :title, :address, :name, :price, :body, :image, presence: true
+	validates :price, numericality: true
 
 end

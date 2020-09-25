@@ -4,9 +4,20 @@ ja:
       ramen_noodle: ラーメン
     attributes:
       ramen_noodle:
-        title: 店名
+        title:   店名
         address: 住所
-        image: 写真
-        name: 商品名
-        price: 値段
-        body: レビュー
+        image:   商品写真
+        name:    商品名
+        price:   値段
+        body:    レビュー
+
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name:     名前
+        gender:   性別
+        age:      年齢
+        email:    メールアドレス
+        password: パスワード

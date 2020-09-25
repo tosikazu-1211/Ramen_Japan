@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
 
   validates :name, :gender, :age, presence: true
+  validates :age, numericality: true
 
 end

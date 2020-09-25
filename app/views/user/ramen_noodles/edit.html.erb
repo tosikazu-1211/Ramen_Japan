@@ -52,7 +52,7 @@
 
 		<div class="actions pull-right">
 			<%= f.submit '変更する', class: "btn btn-primary" %>
-			<%= f.submit '削除する', method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger destroy_user_ramen_noodle_#{@ramen_noodle.id}" %>
+			<%= link_to '削除する', user_ramen_noodle_path(@ramen_noodle.id),method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class: "btn btn-danger destroy_user_ramen_noodle_#{@ramen_noodle.id}" %>
 		</div>
 		<% end %>
 

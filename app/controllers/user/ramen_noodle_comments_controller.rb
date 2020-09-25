@@ -2,6 +2,7 @@ class User::RamenNoodleCommentsController < ApplicationController
 
 	before_action :authenticate_user!
 
+	#コメントの作成
 	def create
 		ramen_noodle = RamenNoodle.find(params[:ramen_noodle_id])
 		comment = current_user.ramen_noodle_comments.new(ramen_noodle_comment_params)
@@ -10,6 +11,7 @@ class User::RamenNoodleCommentsController < ApplicationController
 		redirect_to user_ramen_noodle_path(ramen_noodle)
 	end
 
+	#コメントの削除
 	def destroy
 		RamenNoodleComment.find_by(id: params[:id], ramen_noodle_id: params[:ramen_noodle_id]).destroy
 		redirect_to user_ramen_noodle_path(params[:ramen_noodle_id])

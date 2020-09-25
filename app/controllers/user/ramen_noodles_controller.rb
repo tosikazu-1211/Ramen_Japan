@@ -53,6 +53,7 @@ class User::RamenNoodlesController < ApplicationController
 		redirect_to user_ramen_noodles_path
 	end
 
+	#レビュー検索ページ
 	def search
 		if params[:address].present?
 			@ramen_noodles = RamenNoodle.where('address LIKE ?', "%#{params[:address]}%")

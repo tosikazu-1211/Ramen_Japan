@@ -49,3 +49,47 @@ RamenNoodle.create(
 	body: "美味しいです！",
 	image: open("./app/assets/images/IMG_3097.png")
 	)
+
+RamenNoodle.create(
+	id: 3,
+	user_id: 1,
+	title: "らーめん店1",
+	address: "茨城県古河市",
+	name: "らーめん1",
+	price: "700",
+	body: "美味しいです！",
+	image: open("./app/assets/images/ramen1.png")
+	)
+
+RamenNoodle.create(
+	id: 4,
+	user_id: 1,
+	title: "らーめん店2",
+	address: "茨城県古河市",
+	name: "らーめん2",
+	price: "700",
+	body: "美味しいです！",
+	image: open("./app/assets/images/ramen2.png")
+	)
+
+RamenNoodle.create(
+	id: 5,
+	user_id: 1,
+	title: "らーめん店3",
+	address: "茨城県古河市",
+	name: "らーめん3",
+	price: "700",
+	body: "美味しいです！",
+	image: open("./app/assets/images/ramen3.png")
+	)
+
+RamenNoodle.create(
+	id: 6,
+	user_id: 1,
+	title: "らーめん店4",
+	address: "茨城県古河市",
+	name: "らーめん4",
+	price: "700",
+	body: "美味しいです！",
+	image: open("./app/assets/images/ramen4.png")
+	)

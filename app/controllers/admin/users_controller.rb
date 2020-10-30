@@ -1,19 +1,21 @@
 class Admin::UsersController < ApplicationController
-  before_action :authenticate_admin!
 
-  # ユーザー一覧ページ
-  def index
-    @users = User.page(params[:page]).per(10)
-  end
+	before_action :authenticate_admin!
 
-  # ユーザー詳細ページ
-  def show
-    @user = User.find(params[:id])
-  end
+	#ユーザー一覧ページ
+	def index
+		@users = User.page(params[:page]).per(10)
+	end
 
-  private
+	#ユーザー詳細ページ
+	def show
+		@user = User.find(params[:id])
+	end
 
-  def user_params
-    params.require(:user).permit(:name, :gender, :age, :email)
-  end
+	private
+
+	def user_params
+		params.require(:user).permit(:name, :gender, :age, :email)
+	end
+
 end

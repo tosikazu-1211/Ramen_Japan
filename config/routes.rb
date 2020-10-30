@@ -4,18 +4,18 @@ Rails.application.routes.draw do
   post 'inquiries/thanks'   => 'inquiries#thanks'
 
   devise_for :admins, controllers: {
-  	sessions: 		 'admins/sessions',
-  	passwords: 		 'admins/passwords',
-  	registrations: 'admins/registrations'
+    sessions: 'admins/sessions',
+    passwords: 'admins/passwords',
+    registrations: 'admins/registrations',
   }
 
   devise_for :users, controllers: {
-  	sessions: 		 'users/sessions',
-  	passwords: 		 'users/passwords',
-  	registrations: 'users/registrations'
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
   }
 
-  #user
+  # user
   namespace :user do
     resources :users
     resources :ramen_noodles do
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get  "ramen_noodles"  => "ramen_noodles#index"
   get  "about"          => "user/homes#about"
 
-  #admin
+  # admin
   namespace :admin do
     root "homes#top"
     resources :users, only: [:index, :show]

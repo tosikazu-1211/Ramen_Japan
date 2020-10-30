@@ -1,6 +1,7 @@
 class User::RamenNoodlesController < ApplicationController
 
 	before_action :authenticate_user!
+	before_action :set_ramen_noodle, only: [:show, :edit, :update, :destroy]
 
 	#レビュー新規投稿ページ
 	def new
@@ -26,19 +27,16 @@ class User::RamenNoodlesController < ApplicationController
 
 	#レビュー詳細ページ
 	def show
-		@ramen_noodle = RamenNoodle.find(params[:id])
 		@ramen_noodle_comment = RamenNoodleComment.new
 	end
 
 	#レビュー更新ページ
 	def edit
-		@ramen_noodle = RamenNoodle.find(params[:id])
 		@user = @ramen_noodle.user
 	end
 
 	#レビュー更新アクション
 	def update
-		@ramen_noodle = RamenNoodle.find(params[:id])
 		if @ramen_noodle.update(ramen_noodle_params)
 			redirect_to user_ramen_noodle_path(@ramen_noodle), notice: "レビュー内容を更新しました！"
 		else
@@ -48,7 +46,6 @@ class User::RamenNoodlesController < ApplicationController
 
 	#レビュー削除アクション
 	def destroy
-		@ramen_noodle = RamenNoodle.find(params[:id])
 		@ramen_noodle.destroy
 		redirect_to user_ramen_noodles_path
 	end
@@ -66,6 +63,10 @@ class User::RamenNoodlesController < ApplicationController
 
 	def ramen_noodle_params
 		params.require(:ramen_noodle).permit(:title, :address, :image, :name, :price, :body)
+	end
+
+	def set_ramen_noodle
+		@ramen_noodle = RamenNoodle.find(params[:id])
 	end
 
 end

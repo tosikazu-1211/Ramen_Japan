@@ -10,4 +10,5 @@ class User < ApplicationRecord
 
   validates :name, :gender, :age, presence: true
   validates :age, numericality: true
+
 end

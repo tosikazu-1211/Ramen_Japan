@@ -1,7 +1,37 @@
 <div class="container">
 	<div class="row">
+
 		<div class="main col-md-offset-3 col-md-6">
 			<h1>ようこそ!!! RamenJapanへ!!!</h1>
 		</div>
+
+		<div class="col-xs-10">
+			<h2>おすすめランキング！</h2>
+		</div>
+
+		<div class="col-xs-10">
+			<table class="table table-inverse">
+				<thead>
+					<tr>
+						<th></th>
+						<th>店名</th>
+						<th>商品名</th>
+						<th>住所</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<% @all_ranks.each do |ramen_noodle| %>
+						<td><%= attachment_image_tag ramen_noodle, :image, :fill, 250, 250, fallback: "no_image.png", size:"250x250" %></td>
+						<td><%= ramen_noodle.title %></td>
+						<td><%= link_to ramen_noodle.name, user_ramen_noodle_path(ramen_noodle) %></td>
+						<td><%= ramen_noodle.address %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+
 	</div>
 </div>

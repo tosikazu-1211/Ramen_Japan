@@ -10,14 +10,14 @@
 		<% end %>
 		<% end %>
 
-		<div class="form-group col-xs-3">
+		<div class="form-group col-xs-4">
 			<div class="item-image">
-				<%= attachment_image_tag @ramen_noodle, :image, class: "img-square", fallback: "no_image.png", size:"250x250" %>
+				<%= attachment_image_tag @ramen_noodle, :image, class: "img-square", fallback: "no_image.png", size:"300x300" %>
 			</div>
 			<%= f.attachment_field :image, placeholder: "画像" %>
 		</div>
 
-		<div class="col-xs-9">
+		<div class="col-xs-8">
 			<div class="field">
 				<%= f.label :"店名" %>
 				<%= f.text_field :title, class: "col-xs-12 ramen_noodle_title" %>

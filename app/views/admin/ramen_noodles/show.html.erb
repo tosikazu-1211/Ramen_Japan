@@ -75,9 +75,7 @@
 		</div>
 
 		<div class="pull-right">
-			<% if @ramen_noodle.user == current_user %>
-			<%= link_to "レビュー内容編集", edit_user_ramen_noodle_path(@ramen_noodle), class: "btn-sm btn-primary edit_ramen_noodle_#{@ramen_noodle.id}" %>
-			<% end %>
+			<%= link_to 'レビューを削除する', admin_ramen_noodle_path(@ramen_noodle.id),method: :delete, data: {confirm: "削除しますか？"}, class: "btn btn-danger" %>
 		</div>
 	</div>
 </div>

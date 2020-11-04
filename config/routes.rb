@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "homes#top"
     resources :users, only: [:index, :show, :destroy]
+    resources :ramen_noodles, only: [:index, :show, :destroy]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

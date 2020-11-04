@@ -8,24 +8,27 @@
 
 Admin.create!(
 	id: 1,
+	name: '田中次郎',
 	email: 'admin@gmail.com',
 	password: 'password'
 	)
 
 User.create!(
+	id: 1,
 	name: "鈴木太郎",
 	gender: "male",
 	age: "25",
 	email: "test@test.com",
-	password: "password",
+	password: "password"
 	)
 
 User.create!(
+	id: 2,
 	name: "山田花子",
 	gender: "female",
 	age: "22",
 	email: "test1@test.com",
-	password: "password",
+	password: "password"
 	)
 
 RamenNoodle.create(

@@ -3,11 +3,11 @@ class User::RamenNoodleCommentsController < ApplicationController
 
   # コメントの作成
   def create
-    ramen_noodle = RamenNoodle.find(params[:ramen_noodle_id])
+    @ramen_noodle = RamenNoodle.find(params[:ramen_noodle_id])
     comment = current_user.ramen_noodle_comments.new(ramen_noodle_comment_params)
-    comment.ramen_noodle_id = ramen_noodle.id
+    comment.ramen_noodle_id = @ramen_noodle.id
     comment.save
-    redirect_to user_ramen_noodle_path(ramen_noodle)
+    redirect_to user_ramen_noodle_path(@ramen_noodle)
   end
 
   # コメントの削除

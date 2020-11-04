@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :ramen_noodles
+  has_many :ramen_noodles, dependent: :destroy
   has_many :ramen_noodle_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
